@@ -1,0 +1,24 @@
+<!-- Подключаем Flatpickr CSS и JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+{% extends 'base.html' %}
+
+{% block title %} Новый Абитуриент {% endblock %}
+
+{% block content %}
+<h1>Новый Абитуриент</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+<!-- Активируем календарь для поля birth_date -->
+<script>
+    flatpickr("#id_birth_date", {
+        dateFormat: "Y-m-d",  // Формат даты (как в Django)
+        allowInput: true,     // Разрешить ручной ввод
+    });
+</script>
+{% endblock %}
+

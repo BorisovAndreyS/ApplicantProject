@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} All Applicants {% endblock %}
+
+{% block content %}
+    <h1>Список всех абитуриентов</h1>
+    {% for applicant in applicants %}
+        <div class="applicants">
+            <h1><a href="{% url 'DetailView' applicant.pk %}">{{ applicant.first_name }} {{ applicant.last_name }} </a></h1>
+
+            
+        </div>
+    {% endfor %}
+{% endblock %}

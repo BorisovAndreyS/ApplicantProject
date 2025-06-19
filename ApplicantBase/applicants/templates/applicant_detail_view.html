@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Карточка {{applicant.first_name }} {{ applicant.last_name }} {% endblock %}
+
+{% block content %}
+    <h1>Карточка {{applicant.first_name }} {{ applicant.last_name }}</h1>
+    <p>ФИО: {{applicant.first_name }} {{ applicant.last_name }} {{ applicant.middle_name }}</p>
+
+    <a href="{% url 'Applicants_list' %}">Назад к списку</a>
+{% endblock %}
